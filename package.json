@@ -8,7 +8,7 @@
     "test": "mocha --compilers js:babel-core/register --require tests/helpers/browser.js tests/**/*.spec.js",
     "test-watch": "mocha --watch --compilers js:babel-core/register --require tests/helpers/browser.js tests/**/*.spec.js",
     "test-watch-test": "mocha --watch --compilers js:babel-core/register --require tests/helpers/browser.js",
-    "test-watch-slider": "mocha --watch --compilers js:babel-core/register --require tests/helpers/browser.js tests/**/slider.spec.js"
+    "test-watch-tab": "mocha --watch --compilers js:babel-core/register --require tests/helpers/browser.js tests/**/tabContent.spec.js"
   },
   "author": "",
   "license": "ISC",
