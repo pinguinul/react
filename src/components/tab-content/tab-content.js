@@ -13,12 +13,11 @@ export default class TabContent extends Component {
     }
 
     onClickSubtabButtonHandler(id) {
-        
     }
 
     render() {
         const tabs = this.props.tabs.map((subtabData) =>
-             <Subtab {...subtabData} onClickSubtabButtonHandler={this.onClickSubtabButtonHandler} />
+            <Subtab {...subtabData} onClickSubtabButtonHandler={this.onClickSubtabButtonHandler} />
         );
 
         return (

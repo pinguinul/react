@@ -17,6 +17,8 @@
     "enzyme": "^2.6.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-redux": "^5.0.0",
+    "redux": "^3.6.0",
     "sinon": "^1.17.6"
   },
   "devDependencies": {

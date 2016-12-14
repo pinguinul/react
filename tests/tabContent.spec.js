@@ -40,7 +40,13 @@ describe('<TabContent />', () => {
             <TabContent title="Title" tabs={subTabProps} />
         );
         subTabProps.forEach((prop) => {
-            expect(myTabContent).to.contain(<Subtab key={prop.id} {...prop} onClickSubtabButtonHandler={myTabContent.instance().onClickSubtabButtonHandler} />);
+            expect(myTabContent).to.contain(
+                <Subtab
+                    key={prop.id}
+                    {...prop}
+                    onClickSubtabButtonHandler={myTabContent.instance().onClickSubtabButtonHandler}
+                />
+            );
         });
     });
 });

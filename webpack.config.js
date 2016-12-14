@@ -5,10 +5,10 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './src/app.js',
+    entry: {app: './src/app.js', index: './src/index.js'},
     output: {
         path: './bin',
-        filename: 'app.bundle.js'
+        filename: '[name].bundle.js'
     },
     module: {
         loaders: [
@@ -30,6 +30,7 @@ module.exports = {
         }),
 
         new ExtractTextPlugin('bundle.css', { allChunks: true, }),
+        new ExtractTextPlugin('index.css', { allChunks: true, }),
     ],
     // needed to make request-promise work
     node: {
