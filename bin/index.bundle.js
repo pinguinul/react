@@ -56,11 +56,11 @@
 	
 	var _redux = __webpack_require__(198);
 	
-	var _tabs = __webpack_require__(225);
+	var _reducers = __webpack_require__(225);
 	
-	var _tabs2 = _interopRequireDefault(_tabs);
+	var _reducers2 = _interopRequireDefault(_reducers);
 	
-	var _app = __webpack_require__(226);
+	var _app = __webpack_require__(228);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
@@ -69,7 +69,7 @@
 	/**
 	 * Created by Andra on 14-Dec-16.
 	 */
-	var store = (0, _redux.createStore)(_tabs2.default);
+	var store = (0, _redux.createStore)(_reducers2.default);
 	
 	(0, _reactDom.render)(_react2.default.createElement(
 	    _reactRedux.Provider,
@@ -23738,9 +23738,63 @@
 
 /***/ },
 /* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _redux = __webpack_require__(198);
+	
+	var _tabs = __webpack_require__(226);
+	
+	var _tabs2 = _interopRequireDefault(_tabs);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * Created by Andra on 14-Dec-16.
+	 */
+	
+	exports.default = (0, _redux.combineReducers)({
+	  tabs: _tabs2.default
+	});
+
+/***/ },
+/* 226 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _actions = __webpack_require__(227);
+	
+	var initialState = 3; /**
+	                       * Created by Andra on 14-Dec-16.
+	                       */
+	
+	exports.default = function () {
+	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+	    var action = arguments[1];
+	
+	    switch (action.type) {
+	        case 'SELECT_TAB':
+	            return action.payload;
+	        default:
+	            return state;
+	    }
+	};
+
+/***/ },
+/* 227 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -23748,20 +23802,16 @@
 	/**
 	 * Created by Andra on 14-Dec-16.
 	 */
-	var initialState = 2;
 	
-	exports.default = function () {
-	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-	    var action = arguments[1];
-	
-	    switch (action.type) {
-	        default:
-	            return state;
-	    }
+	var selectTab = exports.selectTab = function selectTab(id) {
+	    return {
+	        type: 'SELECT_TAB',
+	        payload: id
+	    };
 	};
 
 /***/ },
-/* 226 */
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23781,6 +23831,10 @@
 	var _tab = __webpack_require__(179);
 	
 	var _tab2 = _interopRequireDefault(_tab);
+	
+	var _reactRedux = __webpack_require__(187);
+	
+	var _actions = __webpack_require__(227);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -23808,7 +23862,7 @@
 	    _createClass(App, [{
 	        key: 'onClickHandler',
 	        value: function onClickHandler(id) {
-	            console.log(id);
+	            this.props.selectTab(id);
 	        }
 	    }, {
 	        key: 'render',
@@ -23817,22 +23871,19 @@
 	
 	            var tabsData = [{
 	                id: 1,
-	                selected: false,
 	                label: 'Layouts',
 	                iconUrl: 'http://www.megaicons.net/static/img/icons_sizes/118/268/24/picframe-icon.png'
 	            }, {
 	                id: 2,
-	                selected: true,
 	                label: 'Buttons',
 	                iconUrl: 'http://downloadicons.net/sites/default/files/notes-icon-54884.png'
 	            }, {
 	                id: 3,
-	                selected: false,
 	                iconUrl: 'http://icons.iconarchive.com/icons/marcus-roberto/google-play/24/Google-Drive-icon.png'
 	            }];
 	
 	            var tabs = tabsData.map(function (tabProps) {
-	                return _react2.default.createElement(_tab2.default, _extends({}, tabProps, { onClickHandler: _this2.onClickHandler, key: tabProps.id }));
+	                return _react2.default.createElement(_tab2.default, _extends({}, tabProps, { onClickHandler: _this2.onClickHandler, key: tabProps.id, selected: tabProps.id === _this2.props.selectedTab }));
 	            });
 	
 	            return _react2.default.createElement(
@@ -23850,7 +23901,19 @@
 	    return App;
 	}(_react.Component);
 	
-	exports.default = App;
+	exports.default = (0, _reactRedux.connect)(function (_ref) {
+	    var tabs = _ref.tabs;
+	
+	    return {
+	        selectedTab: tabs
+	    };
+	}, function (dispatch) {
+	    return {
+	        selectTab: function selectTab(id) {
+	            dispatch((0, _actions.selectTab)(id));
+	        }
+	    };
+	})(App);
 
 /***/ }
 /******/ ]);
