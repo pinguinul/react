@@ -16,6 +16,7 @@ export default class Subtab extends Component {
     }
 
     render() {
+        console.log(this.props);
         let subtabClass = 'subtab';
 
         if (this.props.selected) {
@@ -29,6 +30,12 @@ export default class Subtab extends Component {
         );
     }
 }
+
+export const SUBTAB_MAGAZINES = 1;
+export const SUBTAB_TEMPLATES = 2;
+export const SUBTAB_SHOPPING = 3;
+export const SUBTAB_SOCIAL = 4;
+
 
 Subtab.propTypes = {
     id: PropTypes.number.isRequired,

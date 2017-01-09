@@ -31,5 +31,34 @@
 .tab.selected a {
   background-color: #ebebeb;
 }
+.subtab a {
+  display: inline-block;
+  color: #017BE3;
+  padding: 15px 10px 10px;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+}
+.subtab.selected a,
+.subtab:hover a {
+  color: #807f7d;
+}
+.subtab.selected a::after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: -7px;
+  left: 50%;
+  margin-left: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-right: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 
 /*# sourceMappingURL=bundle.css.map*/

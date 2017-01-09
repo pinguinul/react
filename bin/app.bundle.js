@@ -21530,6 +21530,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.TAB_IMAGES = exports.TAB_BUTTONS = exports.TAB_LAYOUTS = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -21604,7 +21605,9 @@
 	}(_react.Component);
 	
 	exports.default = Tab;
-	
+	var TAB_LAYOUTS = exports.TAB_LAYOUTS = 1;
+	var TAB_BUTTONS = exports.TAB_BUTTONS = 2;
+	var TAB_IMAGES = exports.TAB_IMAGES = 3;
 	
 	Tab.propTypes = {
 	    id: _react.PropTypes.number.isRequired,
@@ -21635,6 +21638,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.SUBTAB_SOCIAL = exports.SUBTAB_SHOPPING = exports.SUBTAB_TEMPLATES = exports.SUBTAB_MAGAZINES = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -21675,6 +21679,7 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
+	            console.log(this.props);
 	            var subtabClass = 'subtab';
 	
 	            if (this.props.selected) {
@@ -21697,7 +21702,10 @@
 	}(_react.Component);
 	
 	exports.default = Subtab;
-	
+	var SUBTAB_MAGAZINES = exports.SUBTAB_MAGAZINES = 1;
+	var SUBTAB_TEMPLATES = exports.SUBTAB_TEMPLATES = 2;
+	var SUBTAB_SHOPPING = exports.SUBTAB_SHOPPING = 3;
+	var SUBTAB_SOCIAL = exports.SUBTAB_SOCIAL = 4;
 	
 	Subtab.propTypes = {
 	    id: _react.PropTypes.number.isRequired,

@@ -60,7 +60,7 @@
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
-	var _app = __webpack_require__(228);
+	var _app = __webpack_require__(227);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
@@ -21421,6 +21421,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.TAB_IMAGES = exports.TAB_BUTTONS = exports.TAB_LAYOUTS = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -21495,7 +21496,9 @@
 	}(_react.Component);
 	
 	exports.default = Tab;
-	
+	var TAB_LAYOUTS = exports.TAB_LAYOUTS = 1;
+	var TAB_BUTTONS = exports.TAB_BUTTONS = 2;
+	var TAB_IMAGES = exports.TAB_IMAGES = 3;
 	
 	Tab.propTypes = {
 	    id: _react.PropTypes.number.isRequired,
@@ -21518,8 +21521,103 @@
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 181 */,
-/* 182 */,
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.SUBTAB_SOCIAL = exports.SUBTAB_SHOPPING = exports.SUBTAB_TEMPLATES = exports.SUBTAB_MAGAZINES = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	__webpack_require__(182);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by Andra on 15-Nov-16.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var Subtab = function (_Component) {
+	    _inherits(Subtab, _Component);
+	
+	    function Subtab(props) {
+	        _classCallCheck(this, Subtab);
+	
+	        var _this = _possibleConstructorReturn(this, (Subtab.__proto__ || Object.getPrototypeOf(Subtab)).call(this, props));
+	
+	        _this.onClick = _this.onClick.bind(_this);
+	        return _this;
+	    }
+	
+	    _createClass(Subtab, [{
+	        key: 'onClick',
+	        value: function onClick() {
+	            this.props.onClickSubtabButtonHandler(this.props.id);
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            console.log(this.props);
+	            var subtabClass = 'subtab';
+	
+	            if (this.props.selected) {
+	                subtabClass += ' selected';
+	            }
+	
+	            return _react2.default.createElement(
+	                'div',
+	                { className: subtabClass, onClick: this.onClick },
+	                _react2.default.createElement(
+	                    'a',
+	                    { href: '#some-link' },
+	                    this.props.label
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Subtab;
+	}(_react.Component);
+	
+	exports.default = Subtab;
+	var SUBTAB_MAGAZINES = exports.SUBTAB_MAGAZINES = 1;
+	var SUBTAB_TEMPLATES = exports.SUBTAB_TEMPLATES = 2;
+	var SUBTAB_SHOPPING = exports.SUBTAB_SHOPPING = 3;
+	var SUBTAB_SOCIAL = exports.SUBTAB_SOCIAL = 4;
+	
+	Subtab.propTypes = {
+	    id: _react.PropTypes.number.isRequired,
+	    label: _react.PropTypes.string,
+	    selected: _react.PropTypes.bool,
+	    onClickSubtabButtonHandler: _react.PropTypes.func
+	};
+	
+	Subtab.defaultProps = {
+	    label: 'Subtab',
+	    selected: false,
+	    onClickSubtabButtonHandler: function onClickSubtabButtonHandler() {}
+	};
+
+/***/ },
+/* 182 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
 /* 183 */,
 /* 184 */,
 /* 185 */,
@@ -23764,34 +23862,6 @@
 
 /***/ },
 /* 226 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _actions = __webpack_require__(227);
-	
-	var initialState = 3; /**
-	                       * Created by Andra on 14-Dec-16.
-	                       */
-	
-	exports.default = function () {
-	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-	    var action = arguments[1];
-	
-	    switch (action.type) {
-	        case 'SELECT_TAB':
-	            return action.payload;
-	        default:
-	            return state;
-	    }
-	};
-
-/***/ },
-/* 227 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23802,16 +23872,28 @@
 	/**
 	 * Created by Andra on 14-Dec-16.
 	 */
+	var initialState = {
+	    selectedTab: 3
+	};
 	
-	var selectTab = exports.selectTab = function selectTab(id) {
-	    return {
-	        type: 'SELECT_TAB',
-	        payload: id
-	    };
+	exports.default = function () {
+	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+	    var action = arguments[1];
+	
+	    switch (action.type) {
+	        case 'SELECT_TAB':
+	            if (action.payload !== state.selectedTab) {
+	                return Object.assign({}, state, {
+	                    selectedTab: action.payload
+	                });
+	            }
+	        default:
+	            return state;
+	    }
 	};
 
 /***/ },
-/* 228 */
+/* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23828,13 +23910,21 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRedux = __webpack_require__(187);
+	
 	var _tab = __webpack_require__(179);
 	
 	var _tab2 = _interopRequireDefault(_tab);
 	
-	var _reactRedux = __webpack_require__(187);
+	var _actions = __webpack_require__(228);
 	
-	var _actions = __webpack_require__(227);
+	var _tabLayouts = __webpack_require__(229);
+	
+	var _tabLayouts2 = _interopRequireDefault(_tabLayouts);
+	
+	var _tabButtons = __webpack_require__(233);
+	
+	var _tabButtons2 = _interopRequireDefault(_tabButtons);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -23870,21 +23960,38 @@
 	            var _this2 = this;
 	
 	            var tabsData = [{
-	                id: 1,
+	                id: _tab.TAB_LAYOUTS,
 	                label: 'Layouts',
 	                iconUrl: 'http://www.megaicons.net/static/img/icons_sizes/118/268/24/picframe-icon.png'
 	            }, {
-	                id: 2,
+	                id: _tab.TAB_BUTTONS,
 	                label: 'Buttons',
 	                iconUrl: 'http://downloadicons.net/sites/default/files/notes-icon-54884.png'
 	            }, {
-	                id: 3,
+	                id: _tab.TAB_IMAGES,
+	                label: 'Images',
 	                iconUrl: 'http://icons.iconarchive.com/icons/marcus-roberto/google-play/24/Google-Drive-icon.png'
 	            }];
 	
 	            var tabs = tabsData.map(function (tabProps) {
-	                return _react2.default.createElement(_tab2.default, _extends({}, tabProps, { onClickHandler: _this2.onClickHandler, key: tabProps.id, selected: tabProps.id === _this2.props.selectedTab }));
+	                return _react2.default.createElement(_tab2.default, _extends({}, tabProps, {
+	                    onClickHandler: _this2.onClickHandler,
+	                    key: tabProps.id,
+	                    selected: tabProps.id === _this2.props.selectedTab
+	
+	                }));
 	            });
+	
+	            var content = null;
+	
+	            switch (this.props.selectedTab) {
+	                case _tab.TAB_LAYOUTS:
+	                    content = _react2.default.createElement(_tabLayouts2.default, null);
+	                    break;
+	                case _tab.TAB_BUTTONS:
+	                    content = _react2.default.createElement(_tabButtons2.default, null);
+	                    break;
+	            }
 	
 	            return _react2.default.createElement(
 	                'div',
@@ -23893,7 +24000,8 @@
 	                    'div',
 	                    { className: 'tabs' },
 	                    tabs
-	                )
+	                ),
+	                content
 	            );
 	        }
 	    }]);
@@ -23901,11 +24009,15 @@
 	    return App;
 	}(_react.Component);
 	
+	App.propTypes = {
+	    selectTab: _react.PropTypes.func.isRequired,
+	    selectedTab: _react.PropTypes.number.isRequired
+	};
+	
 	exports.default = (0, _reactRedux.connect)(function (_ref) {
 	    var tabs = _ref.tabs;
-	
 	    return {
-	        selectedTab: tabs
+	        selectedTab: tabs.selectedTab
 	    };
 	}, function (dispatch) {
 	    return {
@@ -23914,6 +24026,327 @@
 	        }
 	    };
 	})(App);
+
+/***/ },
+/* 228 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	/**
+	 * Created by Andra on 14-Dec-16.
+	 */
+	
+	var selectTab = exports.selectTab = function selectTab(id) {
+	    return {
+	        type: 'SELECT_TAB',
+	        payload: id
+	    };
+	};
+
+/***/ },
+/* 229 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _tabContent = __webpack_require__(230);
+	
+	var _tabContent2 = _interopRequireDefault(_tabContent);
+	
+	var _subtab = __webpack_require__(181);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by Andra on 09-Jan-17.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var TabLayouts = function (_Component) {
+	    _inherits(TabLayouts, _Component);
+	
+	    function TabLayouts() {
+	        _classCallCheck(this, TabLayouts);
+	
+	        return _possibleConstructorReturn(this, (TabLayouts.__proto__ || Object.getPrototypeOf(TabLayouts)).apply(this, arguments));
+	    }
+	
+	    _createClass(TabLayouts, [{
+	        key: 'render',
+	        value: function render() {
+	            var subTabProps = [{
+	                id: _subtab.SUBTAB_MAGAZINES,
+	                label: 'Magazines'
+	            }, {
+	                id: _subtab.SUBTAB_TEMPLATES,
+	                label: 'My templates'
+	            }];
+	
+	            return _react2.default.createElement(_tabContent2.default, { title: 'Layouts', tabs: subTabProps, selectedSubtab: _subtab.SUBTAB_MAGAZINES });
+	        }
+	    }]);
+	
+	    return TabLayouts;
+	}(_react.Component);
+	
+	exports.default = TabLayouts;
+	;
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	__webpack_require__(231);
+	
+	var _subtab = __webpack_require__(181);
+	
+	var _subtab2 = _interopRequireDefault(_subtab);
+	
+	var _magazines = __webpack_require__(232);
+	
+	var _magazines2 = _interopRequireDefault(_magazines);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by Andra on 01-Nov-16.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var TabContent = function (_Component) {
+	    _inherits(TabContent, _Component);
+	
+	    function TabContent(props) {
+	        _classCallCheck(this, TabContent);
+	
+	        var _this = _possibleConstructorReturn(this, (TabContent.__proto__ || Object.getPrototypeOf(TabContent)).call(this, props));
+	
+	        _this.state = {
+	            selectedSubtab: _this.props.selectedSubtab
+	        };
+	        _this.onClickSubtabButtonHandler = _this.onClickSubtabButtonHandler.bind(_this);
+	        return _this;
+	    }
+	
+	    _createClass(TabContent, [{
+	        key: 'onClickSubtabButtonHandler',
+	        value: function onClickSubtabButtonHandler(id) {
+	            this.setState({
+	                selectedSubtab: id
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+	
+	            var tabs = this.props.tabs.map(function (subtabData) {
+	                return _react2.default.createElement(_subtab2.default, _extends({}, subtabData, {
+	                    onClickSubtabButtonHandler: _this2.onClickSubtabButtonHandler,
+	                    key: subtabData.id,
+	                    selected: _this2.state.selectedSubtab === subtabData.id
+	                }));
+	            });
+	
+	            console.log(tabs);
+	
+	            var content = null;
+	
+	            switch (this.props.selectedSubtab) {
+	                case _subtab.SUBTAB_MAGAZINES:
+	                    content = _react2.default.createElement(_magazines2.default, null);
+	                    break;
+	                // case SUBTAB_SHOPPING:
+	                //     content = <Shopping />;
+	                //     break;
+	            }
+	
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'tab-content' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'title' },
+	                    this.props.title
+	                ),
+	                tabs,
+	                content
+	            );
+	        }
+	    }]);
+	
+	    return TabContent;
+	}(_react.Component);
+	
+	exports.default = TabContent;
+	
+	
+	TabContent.propTypes = {
+	    title: _react.PropTypes.string.isRequired,
+	    tabs: _react.PropTypes.arrayOf(_react.PropTypes.object).isRequired
+	};
+
+/***/ },
+/* 231 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by Andra on 09-Jan-17.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var Magazines = function (_Component) {
+	    _inherits(Magazines, _Component);
+	
+	    function Magazines() {
+	        _classCallCheck(this, Magazines);
+	
+	        return _possibleConstructorReturn(this, (Magazines.__proto__ || Object.getPrototypeOf(Magazines)).apply(this, arguments));
+	    }
+	
+	    _createClass(Magazines, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                'Test'
+	            );
+	        }
+	    }]);
+	
+	    return Magazines;
+	}(_react.Component);
+	
+	exports.default = Magazines;
+	
+	
+	Magazines.defaultProps = {
+	    list: []
+	};
+
+/***/ },
+/* 233 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _tabContent = __webpack_require__(230);
+	
+	var _tabContent2 = _interopRequireDefault(_tabContent);
+	
+	var _subtab = __webpack_require__(181);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by Andra on 09-Jan-17.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var TabButtons = function (_Component) {
+	    _inherits(TabButtons, _Component);
+	
+	    function TabButtons() {
+	        _classCallCheck(this, TabButtons);
+	
+	        return _possibleConstructorReturn(this, (TabButtons.__proto__ || Object.getPrototypeOf(TabButtons)).apply(this, arguments));
+	    }
+	
+	    _createClass(TabButtons, [{
+	        key: 'render',
+	        value: function render() {
+	            var subTabProps = [{
+	                id: _subtab.SUBTAB_SHOPPING,
+	                label: 'Shopping'
+	            }, {
+	                id: _subtab.SUBTAB_SOCIAL,
+	                label: 'Social'
+	            }];
+	
+	            return _react2.default.createElement(_tabContent2.default, { title: 'Buttons', tabs: subTabProps, selectedSubtab: _subtab.SUBTAB_SHOPPING });
+	        }
+	    }]);
+	
+	    return TabButtons;
+	}(_react.Component);
+	
+	exports.default = TabButtons;
+	;
 
 /***/ }
 /******/ ]);
