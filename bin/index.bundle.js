@@ -23873,7 +23873,7 @@
 	 * Created by Andra on 14-Dec-16.
 	 */
 	var initialState = {
-	    selectedTab: 3
+	    selectedTab: 1
 	};
 	
 	exports.default = function () {
@@ -23887,6 +23887,7 @@
 	                    selectedTab: action.payload
 	                });
 	            }
+	            break;
 	        default:
 	            return state;
 	    }
@@ -23991,6 +23992,8 @@
 	                case _tab.TAB_BUTTONS:
 	                    content = _react2.default.createElement(_tabButtons2.default, null);
 	                    break;
+	                default:
+	                    content = _react2.default.createElement(_tabLayouts2.default, null);
 	            }
 	
 	            return _react2.default.createElement(
@@ -24014,12 +24017,16 @@
 	    selectedTab: _react.PropTypes.number.isRequired
 	};
 	
-	exports.default = (0, _reactRedux.connect)(function (_ref) {
+	exports.default = (0, _reactRedux.connect)(
+	// mapStateToProps
+	function (_ref) {
 	    var tabs = _ref.tabs;
 	    return {
 	        selectedTab: tabs.selectedTab
 	    };
-	}, function (dispatch) {
+	},
+	// mapPropsToDispatch
+	function (dispatch) {
 	    return {
 	        selectTab: function selectTab(id) {
 	            dispatch((0, _actions.selectTab)(id));
@@ -24244,6 +24251,8 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _reactRedux = __webpack_require__(187);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24265,6 +24274,12 @@
 	    }
 	
 	    _createClass(Magazines, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            // get magazines list
+	            this.props.dispatchGetMagazinesList();
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
@@ -24278,12 +24293,21 @@
 	    return Magazines;
 	}(_react.Component);
 	
-	exports.default = Magazines;
-	
-	
 	Magazines.defaultProps = {
 	    list: []
 	};
+	
+	exports.default = (0, _reactRedux.connect)(
+	// mapStateToProps
+	function () {},
+	// mapPropsToDispatch
+	function (dispatch) {
+	    return {
+	        getMagazinesList: function getMagazinesList(id) {
+	            dispatch(dispatchGetMagazinesList(id));
+	        }
+	    };
+	})(Magazines);
 
 /***/ },
 /* 233 */
@@ -24346,7 +24370,6 @@
 	}(_react.Component);
 	
 	exports.default = TabButtons;
-	;
 
 /***/ }
 /******/ ]);

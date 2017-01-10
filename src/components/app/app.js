@@ -56,6 +56,8 @@ class App extends Component {
             case TAB_BUTTONS:
                 content = <TabButtons />;
                 break;
+            default:
+                content = <TabLayouts />;
         }
 
         return (
@@ -76,9 +78,11 @@ App.propTypes = {
 };
 
 export default connect(
+    // mapStateToProps
     ({ tabs }) => ({
         selectedTab: tabs.selectedTab,
     }),
+    // mapPropsToDispatch
     (dispatch) => ({
         selectTab: (id) => {
             dispatch(selectTab(id));

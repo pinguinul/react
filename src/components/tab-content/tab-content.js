@@ -3,8 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react';
 import {} from './tab-content.less';
-import Subtab from '../subtab/subtab';
-import {SUBTAB_MAGAZINES, SUBTAB_SHOPPING, SUBTAB_SOCIAL, SUBTAB_TEMPLATES} from '../subtab/subtab';
+import Subtab, { SUBTAB_MAGAZINES, SUBTAB_SHOPPING, SUBTAB_SOCIAL, SUBTAB_TEMPLATES } from '../subtab/subtab';
 import Magazines from '../subtab/magazines';
 
 export default class TabContent extends Component {

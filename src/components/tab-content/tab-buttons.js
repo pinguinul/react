@@ -22,4 +22,4 @@ export default class TabButtons extends Component {
             <TabContent title="Buttons" tabs={subTabProps} selectedSubtab={SUBTAB_SHOPPING} />
         );
     }
-};
+}

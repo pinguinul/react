@@ -2,7 +2,7 @@
  * Created by Andra on 14-Dec-16.
  */
 const initialState = {
-    selectedTab: 3,
+    selectedTab: 1,
 };
 
 export default (state = initialState, action) => {
@@ -13,6 +13,7 @@ export default (state = initialState, action) => {
                     selectedTab: action.payload,
                 });
             }
+            break;
         default:
             return state;
     }

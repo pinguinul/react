@@ -1,7 +1,7 @@
 /**
  * Created by Andra on 09-Jan-17.
  */
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import TabContent from './tab-content';
 import { SUBTAB_MAGAZINES, SUBTAB_TEMPLATES } from '../subtab/subtab';
 
