@@ -3,6 +3,7 @@
  */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getMagazinesList } from '../../actions/';
 
 class Magazines extends Component {
     componentDidMount() {
@@ -11,8 +12,28 @@ class Magazines extends Component {
     }
 
     render() {
+        if (this.props.areLoading) {
+            return (
+                <p>Loading...</p>
+            );
+        }
+
+        let list = [];
+
+        if (this.props.list) {
+            list = this.props.list.map((option, index) =>
+                <li key={index} className="option">
+                    {option.src}
+                </li>
+            );
+        }
+
         return (
-            <div>Test</div>
+            <div>
+                <ul>
+                    {list}
+                </ul>
+            </div>
         );
     }
 }
@@ -23,13 +44,17 @@ Magazines.defaultProps = {
 
 export default connect(
     // mapStateToProps
-    () => {
-
+    (state) => {
+        console.log('state', state);
+        return {
+            list: state.magazines.magazinesList,
+            areLoading: state.magazines.areLoading,
+        };
     },
         // mapPropsToDispatch
     (dispatch) => ({
-        dispatchGetMagazinesList: (id) => {
-            dispatch(getMagazinesList(id));
+        dispatchGetMagazinesList: () => {
+            dispatch(getMagazinesList());
         },
     })
 )(Magazines);

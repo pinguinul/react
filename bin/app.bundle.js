@@ -21679,7 +21679,6 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            console.log(this.props);
 	            var subtabClass = 'subtab';
 	
 	            if (this.props.selected) {

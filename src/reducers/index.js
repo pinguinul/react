@@ -4,7 +4,9 @@
 
 import { combineReducers } from 'redux';
 import tabs from './tabs';
+import magazines from './magazines';
 
 export default combineReducers({
     tabs,
+    magazines,
 });

@@ -16,7 +16,6 @@ export default class Subtab extends Component {
     }
 
     render() {
-        console.log(this.props);
         let subtabClass = 'subtab';
 
         if (this.props.selected) {
