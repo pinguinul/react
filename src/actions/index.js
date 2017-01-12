@@ -3,7 +3,7 @@
  */
 
 export const SELECT_TAB = 'SELECT_TAB';
-export const GET_MAGAZINES = 'GET_MAGAZINES';
+export const GET_STOCK_IMAGES = 'GET_STOCK_IMAGES';
 
 export const selectTab = (id) => {
     return {
@@ -12,9 +12,9 @@ export const selectTab = (id) => {
     };
 };
 
-export const getMagazinesList = () => {
+export const getStockImagesList = () => {
     return {
-        type: GET_MAGAZINES,
+        type: GET_STOCK_IMAGES,
         promise: fetch(
             'http://files.flipsnack.net/collections/resources/stock.json',
             {

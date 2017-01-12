@@ -3,10 +3,12 @@
  */
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import {} from './app.less';
 import Tab, { TAB_LAYOUTS, TAB_BUTTONS, TAB_IMAGES } from '../tab/tab';
 import { selectTab } from '../../actions';
 import TabLayouts from '../tab-content/tab-layouts';
 import TabButtons from '../tab-content/tab-buttons';
+import TabImages from '../tab-content/tab-images';
 
 class App extends Component {
     constructor(props) {
@@ -56,12 +58,15 @@ class App extends Component {
             case TAB_BUTTONS:
                 content = <TabButtons />;
                 break;
+            case TAB_IMAGES:
+                content = <TabImages />;
+                break;
             default:
-                content = <TabLayouts />;
+                content = null;
         }
 
         return (
-            <div>
+            <div className="left-panel">
                 <div className="tabs">
                     {tabs}
                 </div>

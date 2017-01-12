@@ -4,9 +4,9 @@
 
 import { combineReducers } from 'redux';
 import tabs from './tabs';
-import magazines from './magazines';
+import imagesStock from './images';
 
 export default combineReducers({
     tabs,
-    magazines,
+    imagesStock,
 });

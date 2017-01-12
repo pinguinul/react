@@ -3,8 +3,9 @@
  */
 import React, { Component, PropTypes } from 'react';
 import {} from './tab-content.less';
-import Subtab, { SUBTAB_MAGAZINES, SUBTAB_SHOPPING, SUBTAB_SOCIAL, SUBTAB_TEMPLATES } from '../subtab/subtab';
+import Subtab, { SUBTAB_MAGAZINES, SUBTAB_IMAGES_STOCK } from '../subtab/subtab';
 import Magazines from '../subtab/magazines';
+import ImagesStock from '../subtab/images-stock';
 
 export default class TabContent extends Component {
 
@@ -18,7 +19,7 @@ export default class TabContent extends Component {
 
     onClickSubtabButtonHandler(id) {
         this.setState({
-           selectedSubtab: id,
+            selectedSubtab: id,
         });
     }
 
@@ -32,17 +33,20 @@ export default class TabContent extends Component {
             />
         );
 
-        console.log(tabs);
-
         let content = null;
 
         switch (this.props.selectedSubtab) {
             case SUBTAB_MAGAZINES:
                 content = <Magazines />;
                 break;
+            case SUBTAB_IMAGES_STOCK:
+                content = <ImagesStock />;
+                break;
             // case SUBTAB_SHOPPING:
             //     content = <Shopping />;
             //     break;
+            default:
+                break;
         }
 
         return (
@@ -58,4 +62,9 @@ export default class TabContent extends Component {
 TabContent.propTypes = {
     title: PropTypes.string.isRequired,
     tabs: PropTypes.arrayOf(PropTypes.object).isRequired,
+    selectedSubtab: PropTypes.number,
+};
+
+TabContent.defaultProps = {
+    selectedSubtab: 1,
 };

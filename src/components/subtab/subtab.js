@@ -34,6 +34,8 @@ export const SUBTAB_MAGAZINES = 1;
 export const SUBTAB_TEMPLATES = 2;
 export const SUBTAB_SHOPPING = 3;
 export const SUBTAB_SOCIAL = 4;
+export const SUBTAB_IMAGES_STOCK = 5;
+export const SUBTAB_IMAGES_TEXTURES = 6;
 
 
 Subtab.propTypes = {

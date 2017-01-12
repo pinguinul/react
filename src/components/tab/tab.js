@@ -42,8 +42,6 @@ export const TAB_LAYOUTS = 1;
 export const TAB_BUTTONS = 2;
 export const TAB_IMAGES = 3;
 
-
-
 Tab.propTypes = {
     id: PropTypes.number.isRequired,
     selected: PropTypes.bool,
