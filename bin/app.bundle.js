@@ -21638,7 +21638,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.SUBTAB_SOCIAL = exports.SUBTAB_SHOPPING = exports.SUBTAB_TEMPLATES = exports.SUBTAB_MAGAZINES = undefined;
+	exports.SUBTAB_IMAGES_TEXTURES = exports.SUBTAB_IMAGES_STOCK = exports.SUBTAB_SOCIAL = exports.SUBTAB_SHOPPING = exports.SUBTAB_TEMPLATES = exports.SUBTAB_MAGAZINES = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -21705,6 +21705,8 @@
 	var SUBTAB_TEMPLATES = exports.SUBTAB_TEMPLATES = 2;
 	var SUBTAB_SHOPPING = exports.SUBTAB_SHOPPING = 3;
 	var SUBTAB_SOCIAL = exports.SUBTAB_SOCIAL = 4;
+	var SUBTAB_IMAGES_STOCK = exports.SUBTAB_IMAGES_STOCK = 5;
+	var SUBTAB_IMAGES_TEXTURES = exports.SUBTAB_IMAGES_TEXTURES = 6;
 	
 	Subtab.propTypes = {
 	    id: _react.PropTypes.number.isRequired,

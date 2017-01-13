@@ -5,23 +5,19 @@
 export const SELECT_TAB = 'SELECT_TAB';
 export const GET_STOCK_IMAGES = 'GET_STOCK_IMAGES';
 
-export const selectTab = (id) => {
-    return {
-        type: SELECT_TAB,
-        payload: id,
-    };
-};
+export const selectTab = (id) => ({
+    type: SELECT_TAB,
+    payload: id,
+});
 
-export const getStockImagesList = () => {
-    return {
-        type: GET_STOCK_IMAGES,
-        promise: fetch(
-            'http://files.flipsnack.net/collections/resources/stock.json',
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            }
-        ).then(res => res.json()),
-    };
-};
+export const getStockImagesList = () => ({
+    type: GET_STOCK_IMAGES,
+    promise: fetch(
+        'http://files.flipsnack.net/collections/resources/stock.json',
+        {
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        }
+    ).then(res => res.json()),
+});

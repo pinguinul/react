@@ -2,10 +2,12 @@
  * Created by Andra on 01-Nov-16.
  */
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 import {} from './tab-content.less';
-import Subtab, { SUBTAB_MAGAZINES, SUBTAB_IMAGES_STOCK } from '../subtab/subtab';
+import Subtab, { SUBTAB_MAGAZINES, SUBTAB_IMAGES_STOCK, SUBTAB_TEMPLATES } from '../subtab/subtab';
 import Magazines from '../subtab/magazines';
 import ImagesStock from '../subtab/images-stock';
+import MyTemplates from '../subtab/templates';
 
 export default class TabContent extends Component {
 
@@ -18,9 +20,7 @@ export default class TabContent extends Component {
     }
 
     onClickSubtabButtonHandler(id) {
-        this.setState({
-            selectedSubtab: id,
-        });
+        this.props.selectSubtab(id);
     }
 
     render() {
@@ -41,6 +41,9 @@ export default class TabContent extends Component {
                 break;
             case SUBTAB_IMAGES_STOCK:
                 content = <ImagesStock />;
+                break;
+            case SUBTAB_TEMPLATES:
+                content = <MyTemplates />;
                 break;
             // case SUBTAB_SHOPPING:
             //     content = <Shopping />;
@@ -63,8 +66,10 @@ TabContent.propTypes = {
     title: PropTypes.string.isRequired,
     tabs: PropTypes.arrayOf(PropTypes.object).isRequired,
     selectedSubtab: PropTypes.number,
+    selectSubtab: PropTypes.func,
 };
 
 TabContent.defaultProps = {
     selectedSubtab: 1,
+    selectSubtab: () => {},
 };

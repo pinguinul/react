@@ -22,4 +22,4 @@ export default class TabLayouts extends Component {
             <TabContent title="Layouts" tabs={subTabProps} selectedSubtab={SUBTAB_MAGAZINES} />
         );
     }
-};
+}

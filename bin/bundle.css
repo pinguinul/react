@@ -31,6 +31,10 @@
 .tab.selected a {
   background-color: #ebebeb;
 }
+.subtab {
+  display: inline-block;
+  padding-bottom: 20px;
+}
 .subtab a {
   display: inline-block;
   color: #017BE3;
@@ -59,6 +63,9 @@
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+.left-panel {
+  display: flex;
 }
 
 /*# sourceMappingURL=bundle.css.map*/
