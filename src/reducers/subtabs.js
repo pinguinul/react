@@ -10,7 +10,6 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case SELECT_SUBTAB:
-            console.log('--------------------------------');
             if (action.payload !== state.selectedSubtab) {
                 return Object.assign({}, state, {
                     selectedSubtab: action.payload,

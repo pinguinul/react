@@ -70,7 +70,7 @@
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
-	var _app = __webpack_require__(247);
+	var _app = __webpack_require__(246);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
@@ -25237,7 +25237,7 @@
 	
 	var _tabs2 = _interopRequireDefault(_tabs);
 	
-	var _images = __webpack_require__(246);
+	var _images = __webpack_require__(245);
 	
 	var _images2 = _interopRequireDefault(_images);
 	
@@ -25322,8 +25322,7 @@
 	};
 
 /***/ },
-/* 245 */,
-/* 246 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25377,7 +25376,7 @@
 	};
 
 /***/ },
-/* 247 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25396,7 +25395,7 @@
 	
 	var _reactRedux = __webpack_require__(187);
 	
-	__webpack_require__(248);
+	__webpack_require__(247);
 	
 	var _tab = __webpack_require__(179);
 	
@@ -25404,15 +25403,15 @@
 	
 	var _actions = __webpack_require__(244);
 	
-	var _tabLayouts = __webpack_require__(249);
+	var _tabLayouts = __webpack_require__(248);
 	
 	var _tabLayouts2 = _interopRequireDefault(_tabLayouts);
 	
-	var _tabButtons = __webpack_require__(255);
+	var _tabButtons = __webpack_require__(254);
 	
 	var _tabButtons2 = _interopRequireDefault(_tabButtons);
 	
-	var _tabImages = __webpack_require__(256);
+	var _tabImages = __webpack_require__(255);
 	
 	var _tabImages2 = _interopRequireDefault(_tabImages);
 	
@@ -25527,13 +25526,13 @@
 	})(App);
 
 /***/ },
-/* 248 */
+/* 247 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 249 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25548,7 +25547,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _tabContent = __webpack_require__(250);
+	var _tabContent = __webpack_require__(249);
 	
 	var _tabContent2 = _interopRequireDefault(_tabContent);
 	
@@ -25595,7 +25594,7 @@
 	exports.default = TabLayouts;
 
 /***/ },
-/* 250 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25614,21 +25613,21 @@
 	
 	var _reactRedux = __webpack_require__(187);
 	
-	__webpack_require__(251);
+	__webpack_require__(250);
 	
 	var _subtab = __webpack_require__(181);
 	
 	var _subtab2 = _interopRequireDefault(_subtab);
 	
-	var _magazines = __webpack_require__(252);
+	var _magazines = __webpack_require__(251);
 	
 	var _magazines2 = _interopRequireDefault(_magazines);
 	
-	var _imagesStock = __webpack_require__(253);
+	var _imagesStock = __webpack_require__(252);
 	
 	var _imagesStock2 = _interopRequireDefault(_imagesStock);
 	
-	var _templates = __webpack_require__(254);
+	var _templates = __webpack_require__(253);
 	
 	var _templates2 = _interopRequireDefault(_templates);
 	
@@ -25662,6 +25661,7 @@
 	        key: 'onClickSubtabButtonHandler',
 	        value: function onClickSubtabButtonHandler(id) {
 	            this.props.selectSubtab(id);
+	            console.log('subtab id', id);
 	        }
 	    }, {
 	        key: 'render',
@@ -25728,13 +25728,13 @@
 	};
 
 /***/ },
-/* 251 */
+/* 250 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 252 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25786,7 +25786,7 @@
 	exports.default = Magazines;
 
 /***/ },
-/* 253 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25899,7 +25899,7 @@
 	})(ImagesStock);
 
 /***/ },
-/* 254 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25951,7 +25951,7 @@
 	exports.default = MyTemplates;
 
 /***/ },
-/* 255 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25966,7 +25966,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _tabContent = __webpack_require__(250);
+	var _tabContent = __webpack_require__(249);
 	
 	var _tabContent2 = _interopRequireDefault(_tabContent);
 	
@@ -26013,7 +26013,7 @@
 	exports.default = TabButtons;
 
 /***/ },
-/* 256 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -26028,7 +26028,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _tabContent = __webpack_require__(250);
+	var _tabContent = __webpack_require__(249);
 	
 	var _tabContent2 = _interopRequireDefault(_tabContent);
 	
